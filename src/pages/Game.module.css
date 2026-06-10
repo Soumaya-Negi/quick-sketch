@@ -1,0 +1,526 @@
+/* Game.module.css */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap');
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: 'Nunito', Arial, sans-serif;
+  padding:   12px 16px;
+  box-sizing: border-box;
+
+  background-color: #fdf6ec;
+  background-image: radial-gradient(circle, #d4bfa0 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 1100px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.roomLabel {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.3rem;
+  color: #2d2d2d;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.playerBadge {
+  font-size: 0.8rem;
+  color: #777;
+  font-weight: 600;
+}
+
+.wordArea {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.2rem;
+  letter-spacing: 6px;
+  color: #333;
+  background: #fff;
+  border: 1px solid #e0d6c8;
+  border-radius: 6px;
+  padding: 6px 16px;
+}
+
+/* layout */
+.gameArea {
+  display: flex;
+  gap: 14px;
+  flex: 1;
+  min-height: 0;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* player list */
+.playerList {
+  width: 160px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #fff;
+  border: 1px solid #e0d6c8;
+  border-radius: 6px;
+  padding: 12px;
+  align-self: flex-start;
+  box-sizing: border-box;
+}
+
+.playerListTitle {
+  font-family: 'Fredoka One', cursive;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #aaa;
+  margin: 0 0 4px 0;
+}
+
+.playerItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  background: #fdf6ec;
+  border: 1px solid #e8ddd0;
+  border-radius: 6px;
+}
+
+.playerAvatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: #4f46e5;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fredoka One', cursive;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.playerName {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.playerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.playerScore {
+  font-size: 0.75rem;
+  color: #4f46e5;
+  font-weight: 600;
+}
+
+.waitingText {
+  font-size: 0.75rem;
+  color: #bbb;
+  text-align: center;
+  margin: 4px 0 0 0;
+}
+
+.roundInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e0d6c8;
+  border-radius: 6px;
+  padding: 4px 16px;
+  height: 52px;
+  justify-content: center;
+}
+
+.roundNumber {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.roundLabel {
+  font-size: 0.65rem;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.canvasColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+
+.canvasWrapper {
+  flex: 1;
+  min-height: 0;
+  border: 2px solid #bbb;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='4' fill='%23222'/%3E%3C/svg%3E") 10 10, crosshair;
+}
+
+/* toolbar */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid #e0d6c8;
+  border-radius: 6px;
+  padding: 8px 14px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.toolbarLabel {
+  font-size: 0.75rem;
+  color: #aaa;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.colorSwatches {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.swatch {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.swatch:hover {
+  opacity: 0.8;
+}
+
+.swatchActive {
+  border-color: #333;
+}
+
+.sizeSlider {
+  width: 80px;
+  cursor: pointer;
+  accent-color: #4f46e5;
+}
+
+.clearBtn {
+  margin-left: auto;
+  padding: 4px 12px;
+  background: #fff;
+  border: 1px solid #f87171;
+  color: #ef4444;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-family: 'Nunito', Arial, sans-serif;
+  font-weight: 700;
+}
+
+.clearBtn:hover {
+  background: #fef2f2;
+}
+
+/* chat */
+.chat {
+  width: 220px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 0;
+}
+
+.chatTitle {
+  font-family: 'Fredoka One', cursive;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #aaa;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.messages {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #e0d6c8;
+  border-radius: 6px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.message {
+  font-size: 0.85rem;
+  color: #444;
+  line-height: 1.4;
+}
+
+.message strong {
+  color: #4f46e5;
+  font-weight: 700;
+}
+
+.messagePlaceholder {
+  font-size: 0.85rem;
+  color: #ccc;
+  text-align: center;
+  margin: auto;
+}
+
+.inputRow {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: 'Nunito', Arial, sans-serif;
+  outline: none;
+  background: #fff;
+}
+
+.input:focus {
+  border-color: #4f46e5;
+}
+
+.sendBtn {
+  padding: 8px 12px;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-family: 'Nunito', Arial, sans-serif;
+  font-weight: 700;
+}
+
+.sendBtn:hover {
+  background-color: #4338ca;
+}
+
+.playerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.playerScore {
+  font-size: 0.75rem;
+  color: #4f46e5;
+  font-weight: 600;
+}
+
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e0d6c8;
+  border-radius: 6px;
+  padding: 4px 16px;
+  min-width: 56px;
+  height: 52px;
+  justify-content: center;
+}
+
+.timerNumber {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.6rem;
+  color: #333;
+  line-height: 1;
+}
+
+.timerLow {
+  color: #ef4444;
+}
+
+.timerLabel {
+  font-size: 0.65rem;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e0d6c8;
+  border-radius: 6px;
+  padding: 4px 16px;
+  min-width: 56px;
+}
+
+.timerNumber {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.6rem;
+  color: #333;
+  line-height: 1;
+}
+
+.timerLow { 
+  color: #ef4444;
+}
+
+.timerLabel {
+  font-size: 0.65rem;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.headerCenter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.roundInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e0d6c8;
+  border-radius: 6px;
+  padding: 4px 16px;
+  min-width: 56px;
+}
+
+.roundNumber {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.roundLabel {
+  font-size: 0.65rem;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.leaderboardModal {
+  background: #fdf6ec;
+  border: 2px solid #e0d6c8;
+  border-radius: 12px;
+  padding: 36px 48px;
+  min-width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: center;
+}
+
+.leaderboardModal h1 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 2rem;
+  color: #2d2d2d;
+  margin: 0 0 8px 0;
+}
+
+.leaderboardItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  background: #fff;
+  border: 1px solid #e0d6c8;
+  border-radius: 8px;
+  font-family: 'Nunito', Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.leaderboardItem:first-of-type {
+  border-color: #ffd447;
+  background: #fffbea;
+  font-size: 1.1rem;
+}
+.restartBtn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #4f46e5;
+  color: white;
+
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.restartBtn:hover {
+  background: #4338ca;
+}

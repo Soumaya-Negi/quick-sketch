@@ -1,0 +1,80 @@
+/* Home.module.css */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap');
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  font-family: 'Nunito', Arial, sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+
+  /* bg: soft warm cream with scattered pencil-dot pattern */
+  background-color: #fdf6ec;
+  background-image: radial-gradient(circle, #d4bfa0 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.title {
+  font-family: 'Fredoka One', cursive;
+  font-size: 3rem;
+  color: #2d2d2d;
+  margin: 0 0 4px 0;
+  letter-spacing: 1px;
+}
+
+.input {
+  padding: 10px 14px;
+  width: 260px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: 'Nunito', Arial, sans-serif;
+  outline: none;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.input:focus {
+  border-color: #4f46e5;
+}
+
+.button {
+  padding: 10px 24px;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: 'Fredoka One', cursive;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  width: 260px;
+}
+
+.button:hover {
+  background-color: #4338ca;
+}
+
+.divider {
+  color: #aaa;
+  font-size: 0.85rem;
+}
+
+.joinBox {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.joinBox .input {
+  width: 180px;
+}
+
+.joinBox .button {
+  width: auto;
+  padding: 10px 18px;
+}
