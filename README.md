@@ -1,30 +1,58 @@
 # QuickSketch Multiplayer
 
-A multiplayer drawing and guessing game inspired by Skribbl.
+A multiplayer drawing game inspired by Skribbl, built with React and Express.js.
+
+## Overview
+
+QuickSketch allows players to create and join rooms, interact within a shared game session, and experience multiplayer gameplay through client-server communication.
+
+This project was built to learn frontend-backend integration, state synchronization, and multiplayer application architecture.
 
 ## Features
 
-- Create rooms
-- Join existing rooms
-- Multiplayer synchronization
-- Drawing canvas
-- Shared room state
+* Create game rooms
+* Join existing rooms
+* Shared room state
+* Multiplayer synchronization
+* React-based user interface
+* Express.js backend
 
 ## Tech Stack
 
-Frontend
-- React
-- JavaScript
-- React Router
-- CSS
+### Frontend
 
-Backend
-- Node.js
-- Express.js
+* React
+* JavaScript
+* React Router
+* CSS
 
-## What I Learned
+### Backend
 
-- Client-server communication
-- REST APIs
-- Multiplayer state synchronization
-- React component architecture
+* Node.js
+* Express.js
+
+## Project Structure
+
+```text
+quick-sketch/
+├── backend/
+├── src/
+├── package.json
+└── README.md
+```
+
+## Learning Outcomes
+
+* Client-server architecture
+* REST API development
+* State management in React
+* Multiplayer synchronization concepts
+* Full-stack application structure
+
+## Future Improvements
+
+* Real-time communication with Socket.IO
+* Authentication
+* Persistent room storage
+* Improved game logic
+* Deployment
