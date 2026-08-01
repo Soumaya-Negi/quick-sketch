@@ -8,6 +8,7 @@ const app = express();
 
 const httpServer = createServer(app);
 const rooms = {};
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
