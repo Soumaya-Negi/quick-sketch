@@ -8,6 +8,7 @@ const app = express();
 
 const httpServer = createServer(app);
 const rooms = {};
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
@@ -243,7 +244,7 @@ app.post("/restart-game", (req, res) => {
 
 const io = new Server(httpServer, {
     cors: {
-        origin: "http://localhost:5173"
+        origin: process.env.CLIENT_URL || "http://localhost:5173"
     }
 });
 
@@ -277,5 +278,5 @@ io.on("connection", (socket) => {
 });
 
 httpServer.listen(3000, () => {
-    console.log("server started on port 3000");
+    console.log(`server started on port ${PORT}`);
 });
