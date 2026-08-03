@@ -7,8 +7,10 @@ export default function Home() {
   const [roomCode, setRoomCode] = useState("");
   const navigate = useNavigate();
 
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const createRoom = async () => {
-    const response = await fetch("http://localhost:3000/create-room", {
+    const response = await fetch(`${API_URL}/create-room`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name }),
@@ -20,7 +22,7 @@ export default function Home() {
 
   const joinRoom = async () => {
     if (!name.trim() || !roomCode.trim()) return alert("Fill all fields");
-    const response = await fetch("http://localhost:3000/join-room", {
+    const response = await fetch(`${API_URL}/join-room`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ roomCode, name }),

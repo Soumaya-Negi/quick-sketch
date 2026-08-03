@@ -8,10 +8,12 @@ export default function Room() {
   const location = useLocation();
   const navigate = useNavigate();
   const name = location.state?.name || "Guest";
+  const API_URL = import.meta.env.VITE_API_URL;
 
   const startGame = async () => {
 
-    await fetch("http://localhost:3000/start-game", {
+
+    await fetch(`${API_URL}/start-game`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -25,7 +27,7 @@ export default function Room() {
   const fetchRoomData = async () => {
 
     const response = await fetch(
-      `http://localhost:3000/room/${roomId}`, { method: "GET" }
+      `${API_URL}/room/${roomId}`, { method: "GET" }
     );
 
     const data = await response.json();
