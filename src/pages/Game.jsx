@@ -25,6 +25,7 @@ export default function Game() {
   const [lineWidth, setLineWidth] = useState(4);
   const [guess, setGuess] = useState("");
 
+  const API_URL = import.meta.env.VITE_API_URL;
   // Keep canvas intrinsic size exactly in sync with its rendered size
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -52,7 +53,7 @@ export default function Game() {
   // connects with socket server when game state loads
   useEffect(() => {
 
-    socketRef.current = io("http://localhost:3000");
+    socketRef.current = io(API_URL);
 
     socketRef.current.emit("join-room", roomId);
 
@@ -60,10 +61,10 @@ export default function Game() {
       socketRef.current.disconnect();
     };
 
-  }, []);XPathExpression
+  }, []);
 
   const fetchRoomData = async () => {
-    const response = await fetch(`http://localhost:3000/room/${roomId}`, { method: "GET" });
+    const response = await fetch(`${API_URL}/room/${roomId}`, { method: "GET" });
     const data = await response.json();
     if (
       previousDrawerRef.current &&
@@ -295,7 +296,7 @@ export default function Game() {
 
   const sendGuess = async () => {
     if (!guess.trim()) return;
-    const response = await fetch("http://localhost:3000/send-message",
+    const response = await fetch(`${API_URL}/send-message`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -321,7 +322,7 @@ export default function Game() {
       roomData?.host !== name || roomData?.gameEnded
     ) return;
 
-    fetch("http://localhost:3000/next-turn", {
+    fetch(`${API_URL}/next-turn`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -525,7 +526,7 @@ export default function Game() {
                 onClick={async () => {
 
                   await fetch(
-                    "http://localhost:3000/restart-game",
+                    `${API_URL}/restart-game`,
                     {
                       method: "POST",
                       headers: {
